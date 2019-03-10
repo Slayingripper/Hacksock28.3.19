@@ -24,7 +24,52 @@ The python library calls a C program. The C program maps the Peripheral Bus (0x2
 
 Modulation is done by adjusting the frequency using the fractional divider between 103.325Mhz and 103.275Mhz, which makes the audio signal.
 
-## Expanding on this idea 
+
+## Steganography
+
+Steganography is the art of hiding something in somehting else . Its very usefull when you need to hide stuff (like your porn folder ^^) doing this is easy and can be expanded very easily (but can be easily detected if you are not carefull. For starters pic some files you want to hide a put them in a zip folder you will also need a JPG image (preferebly a high quility one).
+
+Now it is clear that we want to hide  youfiles.zip inside apicture.jpg image. We will use the Linux cat command  which has different functions like displaying files, creating new ones and combining copies of them. The cat command will read the images file first, secret_files.zip and we will concatenate them   together.   After you have opened the terminal change directory to the  directory  where you have your files, mine are inside  Desktop, so i type cd Desktop/articles in my terminal and press Enter.
+
+Make sure all the files are inside the directory by using the ls command  which stands for listing all files and subdirectories inside a directory and copy your filenames inside a text document because you will need them in the next command.  Time to hide my zip archive inside my image.
+
 ```
-https://github.com/F5OEO/rpitx
+cat myimage.jpg yourfiles.zip > newimage.jpg
 ```
+
+### Exaplnation
+
+    cat reads the image file
+    cat reads the zip file
+    cat  concatenates the image and the zip file togeather  in a new file, bugatti.jpg ( You can put any name you like)
+
+
+Press Enter and a new  file will be created. The new file is newimage.jpg which  looks like a regular image file but if we try to operate with unzip command on it ,  the unzip command will extract  the zip archive that is inside the image.
+
+TYpe 
+```
+ls
+```
+and your file will should be there
+
+The file that is important to us is youfile.jpg  because  our secret files are inside this image so feel completely free to delete other files when you  use this method. It looks like a normal jpeg file and it
+will open as an image
+
+If notice the file is larger than before that is because we have hidden files in the image its self (and is a dead give away if its too much to an experienced user).
+
+To pull out the files just use
+
+```
+unzip yourfile.jpg
+
+```
+
+This can become really handy when you want to sent an email and hide something if someone where to hijack the receipient or inject a payload in a system by just sending an image . 
+
+## Bash scripting essentials 
+
+
+
+
+
+

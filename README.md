@@ -1,5 +1,18 @@
 # Hacksock28.3.19
 
+Today we will be looking into using a raspberry pi itself for rf transmission , hidding files , and scripting some bash scripts. 
+We can freely transmit on the 88-108 band without a licence if 1. we dont interfere with any other service on that spectrum 2. the power output is bellow 100mW 3.Used only for personal use ( car fm transmitters). (https://www.fcc.gov/media/radio/low-power-radio-general-information).
+“This device complies with part 15 of the FCC Rules. Operation is subject to the following two conditions: (1) This device may not cause harmful interference, and (2) this device must accept any interference received, including interference that may cause undesired operation.”
+
+** The raspbery pi though does send out unfiltered RF so use with caution as it can create harmonic waves that can interfere with other devices or signals further down the spectrum . **
+
+Steganography is a fun an interesting way to hide files and combined with encryption might even be "unbreakable" .
+
+
+
+
+
+
 ## Prerequisites 
 any linux distro (ubuntu shell on windows is fine) 
 Raspberry pi
@@ -165,7 +178,7 @@ If you ever had something crash on linux there is always a pop up that shows up(
 sudo rm /var/crash/*
 
 ```
-just add this to a .sh file and the crash will be gone on next start up . This just clear the crash logs of the system
+just add this to a .sh file and the crash will be gone on next start up . This just clears the crash logs of the system
 
 
 

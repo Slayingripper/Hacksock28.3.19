@@ -109,7 +109,30 @@ Now you are ready to execute your first bash script:
 ./hello_world.sh 
 
 ```
+
+Adding colours to your bashscripts can not only make them look more appealing but also help you differentiate between things. Bash recognises colours by there ANSI escape codes (https://en.wikipedia.org/wiki/ANSI_escape_code)
+
+some examples are 
+```
+Black        0;30     Dark Gray     1;30
+Red          0;31     Light Red     1;31
+Green        0;32     Light Green   1;32
+Brown/Orange 0;33     Yellow        1;33
+Blue         0;34     Light Blue    1;34
+Purple       0;35     Light Purple  1;35
+Cyan         0;36     Light Cyan    1;36
+Light Gray   0;37     White         1;37
+```
+
+
 Lets make a long but simple update script that diplays system info and update the system packages but also removes the old packages (saving space).
+
+If you dont have "screenfetch" installed you can either skip it or just run
+```
+sudo apt install screenfetch
+```
+Lets script some bash
+remember that the "#" can be used to add comments 
 
 ```
 #!/bin/bash

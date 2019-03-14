@@ -37,6 +37,48 @@ The python library calls a C program. The C program maps the Peripheral Bus (0x2
 
 Modulation is done by adjusting the frequency using the fractional divider between 103.325Mhz and 103.275Mhz, which makes the audio signal.
 
+#### LETS GET TO THE SPICY STUFF 
+
+Steps to play sound:
+
+```
+sudo python
+>>> import PiFm
+>>> PiFm.play_sound("sound.wav")
+
+```
+Default frequency is 103.3 so tune your radio app on you phone to that frequency 
+
+Lets take this a bit further 
+pick your favorite song from youtube download it as a wav file using https://www.saveclipbro.com/
+
+to make things easier we can just right click on "Download you file" button and select "copy link location" 
+then paste the link like this into "putty" or what ever ssh client you are using.
+
+```
+
+wget https://www.saveclipbro.com/download/93b38dec-328b-4c12-8a8d-ec796fb51a5a
+
+```
+
+This will download the file in the directory we are in 
+
+now using 
+```
+sudo ./pifm thefileyoudownloaded.wav 103.3 22050 stereo
+```
+we can play the file on 103.3 in full stereo!! **but there is a big problem the audio does not sound right.** 
+This is because we are trying to play a file in a different bitrate than its actually in. To find out the bitrate we can do a simple command like this 
+
+```
+file file.wav
+```
+
+Make a note of the bit rate and change the bitrate parameter in the command we used before to play the file to the bitrate of the file 
+
+```
+sudo ./pifm thefileyoudownloaded.wav 103.3 48100 stereo
+```
 
 ## Steganography
 
